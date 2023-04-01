@@ -281,21 +281,6 @@
       </div>
 
       <div class="row">
-        <div
-          class="col-md-8 section__resume resume-list"
-          id="certifications-container"
-        >
-          <h3 class="resume-list_title">certifications</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-8 section__resume resume-list" id="achievements">
-          <h3 class="resume-list_title">ACHIEVEMENTS</h3>
-        </div>
-      </div>
-
-      <div class="row">
         <div class="col-md-8 section__resume resume-list" id="activities">
           <h3 class="resume-list_title">Extra Curricular Activities</h3>
         </div>
@@ -464,57 +449,6 @@
     </section>
     <!--Resume-->
 
-    <!--Portfolio-->
-    <section id="github" class="container section">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 id="portfolio_header" class="section__title">
-            Pinned repositories_
-          </h2>
-        </div>
-      </div>
-
-      <div class="row" id="pinned-repos">
-        <div class="col-md-12 mt-5">
-          <img
-            style="width: 100% !important"
-            src="https://ghchart.rshah.org/shaxadhere"
-          />
-        </div>
-      </div>
-    </section>
-    <!--Portfolio-->
-    <!--Portfolio-->
-    <section id="portfolio" class="container section">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 id="portfolio_header" class="section__title">My projects_</h2>
-        </div>
-      </div>
-      <div class="row portfolio-menu">
-        <div class="col-md-12">
-          <nav>
-            <ul>
-              <li><a href="" data-portfolio-target-tag="all">all</a></li>
-              <li><a href="" data-portfolio-target-tag="apis">api(s)</a></li>
-              <li>
-                <a href="" data-portfolio-target-tag="websites">websites</a>
-              </li>
-              <li>
-                <a href="" data-portfolio-target-tag="libs"
-                  >open source libraries</a
-                >
-              </li>
-              <li>
-                <a href="" data-portfolio-target-tag="apps">mobile apps</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </section>
-    <!--Portfolio-->
-    <!--Contact-->
     <div
       class="background"
       style="background-image: url(assets/img/img_bg_main.jpg)"
@@ -531,18 +465,18 @@
               <dl class="contact-list">
                 <dt>Phone:</dt>
                 <dd>
-                  <a href="tel:923032804856">+92 (303) 2804-856</a>
+                  <a href="tel:923161059565">+92 (316) 105-9565 </a>
                 </dd>
                 <dt>Whatsapp:</dt>
                 <dd>
-                  <a href="https://wa.me/923032804856" target="_blank"
-                    >+92 (303) 2804-856</a
+                  <a href="https://wa.me/923161059565" target="_blank"
+                    >+92 (316) 105-9565</a
                   >
                 </dd>
                 <dt>Email:</dt>
                 <dd>
-                  <a href="mailto:shaxad.here@gmail.com"
-                    >shaxad.here@gmail.com</a
+                  <a href="mailto:murtaza.hassan147@gmail.com"
+                    >murtaza.hassan147@gmail.com</a
                   >
                 </dd>
               </dl>
@@ -651,10 +585,7 @@
             credentials: "15-021-05122-9-005-C",
           },
         ],
-        achievements: [],
         activities: [],
-        pinnedRepositories: [],
-        githubActivity: "",
         skills: [
           {
             name: "Sales & Marketing",
@@ -681,7 +612,6 @@
             percentage: "90",
           },
         ],
-        projects: [],
       };
 
       $("#name").html(me["name"]);
@@ -749,18 +679,6 @@
             "</div>"
         );
       });
-      me["achievements"].forEach((item) => {
-        $("#achievements").append(
-          "<div class='resume-list__block'>" +
-            "<p class='resume-list__block-title'>" +
-            item["title"] +
-            "</p>" +
-            "<p>" +
-            item["description"] +
-            "</p>" +
-            "</div>"
-        );
-      });
       me["activities"].forEach((item) => {
         $("#activities").append(
           "<div class='resume-list__block'>" +
@@ -775,60 +693,8 @@
             "</div>"
         );
       });
-      let projects = me["projects"];
-      projects.forEach((item) => {
-        var stacks = item["stacks"];
-        stackHtml = "";
-        stacks.forEach((stack) => {
-          stackHtml += "<li>" + stack + "</li>";
-        });
-        $("#portfolio").append(
-          "<div class='portfolio-cards'>" +
-            "<div class='row project-card' data-toggle='modal' data-target='#portfolioModal13' data-portfolio-tag='" +
-            item["type"] +
-            "'>" +
-            "<div class='col-md-6 col-lg-5 project-card__img' style='border-style: double;'>" +
-            "<img class='' src='assets/img/" +
-            item["image"] +
-            "' alt='project-img'>" +
-            "</div>" +
-            "<div class='col-md-6 col-lg-7 project-card__info'>" +
-            "<h3 class='project-card__title'>" +
-            item["title"] +
-            "</h3>" +
-            "<p class='project-card__description'>" +
-            item["description"] +
-            "</p>" +
-            "<p class='project-card__stack'>Used stack:</p>" +
-            "<ul class='tags'>" +
-            stackHtml +
-            "</ul>" +
-            "<a href='" +
-            item["link"] +
-            "' class='project-card__link'>" +
-            item["link"] +
-            "</a>" +
-            "</div>" +
-            "</div>" +
-            "</div>"
-        );
-      });
-
-      let pinnedRepos = me.pinnedRepositories;
-
-      pinnedRepos.forEach((item) => {
-        $("#pinned-repos").prepend(
-          `<div class="col-md-4">
-            <a href='${item.link}'>
-            <iframe
-              class="embed-responsive"
-              src="${item.iframe}"
-            ></iframe>
-            </a>
-          </div>`
-        );
-      });
-      const ageDifMs = Date.now() - new Date("2000-11-01").getTime();
+    
+      const ageDifMs = Date.now() - new Date("2001-09-02").getTime();
       const ageDate = new Date(ageDifMs);
       const age = Math.abs(ageDate.getUTCFullYear() - 1970);
       document.getElementById("year").innerHTML = new Date().getFullYear();
